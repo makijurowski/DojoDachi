@@ -13,8 +13,8 @@ namespace Dojodachi.Controllers
     {
         // Dojodachi index
         [HttpGet]
-        [Route("dojodachi")]
-        public IActionResult Dojodachi()
+        [Route("")]
+        public IActionResult Index()
         {
             // Get Dojodachi information from session and initialize default values
             DojodachiPet myDachi = HttpContext.Session.GetObjectFromJson<DojodachiPet>("myDachi");
@@ -35,7 +35,7 @@ namespace Dojodachi.Controllers
 
         // Player pressed interaction button
         [HttpPost]
-        [Route("dojodachi/action")]
+        [Route("action")]
         public IActionResult Action(string action)
         {
             // Fetch Dojodachi information from session
@@ -137,17 +137,17 @@ namespace Dojodachi.Controllers
             // Save myDachi information to session
             HttpContext.Session.SetObjectAsJson("myDachi", myDachi);
             ViewBag.Dojodachi = myDachi;
-            return View("Dojodachi");
+            return View("Index");
         }
 
         // Player pressed "Play Again?" button
         [HttpPost]
-        [Route("dojodachi/reset")]
+        [Route("reset")]
         public IActionResult Reset()
         {
             // Reset the game by clearing session, then redirect to Dojodachi
             HttpContext.Session.Clear();
-            return RedirectToAction("Dojodachi");
+            return RedirectToAction("Index");
         }
     }
 
