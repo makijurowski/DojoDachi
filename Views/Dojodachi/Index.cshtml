@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Dojodachi";
+}
+
+<div class="row">
+    <div class="col-md-1"> </div>
+    <div class="col-md-10">
+        <div class="row">
+            <h1 class="lead text-center alert alert-info">Dojodachi</h1>
+        </div>
+        <div class="row text-center well well-lg">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <b>Fullness:</b> @ViewBag.Dojodachi.Fullness
+            </div>
+            <div class="col-md-2">
+                <b>Happiness:</b> @ViewBag.Dojodachi.Happiness
+            </div>
+            <div class="col-md-2">
+                <b>Meals:</b> @ViewBag.Dojodachi.Meals
+            </div>
+            <div class="col-md-2">
+                <b>Energy:</b> @ViewBag.Dojodachi.Energy
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row text-center">
+            <img src="/images/dojodachi2.gif">
+        </div>
+        <div class="row text-center alert alert-info">
+            @ViewBag.Message
+        </div>
+        <div class="row text-center">
+            <div class="col-md-2"></div>
+            <div class="col-md-2 center-block">
+                <form action="/dojodachi/feed" method="post">
+                    <input type="submit" value="Feed" name="Feed" class="btn btn-default"></input>
+                </form>
+            </div>
+            <div class="col-md-2 center-block">
+                <form action="/dojodachi/play" method="post">
+                    <input type="submit" value="Play" name="Play" class="btn btn-default"></input>
+                </form>            
+            </div>
+            <div class="col-md-2 center-block">
+                <form action="/dojodachi/work" method="post">
+                    <input type="submit" value="Work" name="Work" class="btn btn-default"></input>
+                </form>            
+            </div>
+            <div class="col-md-2 center-block">
+                <form action="/dojodachi/sleep" method="post">
+                    <input type="submit" value="Sleep" name="Sleep" class="btn btn-default"></input>
+                </form>            
+            </div>
+            <div class="col-md 2"></div>
+        </div>
+    </div>
+    <div class="col-md-1"> </div>
+</div>
